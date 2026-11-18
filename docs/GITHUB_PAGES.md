@@ -1,11 +1,22 @@
 # Vista de Habitalia en GitHub Pages
 
-Destino previsto: https://rober-prog.github.io/habitalia-consulting/
-Repositorio previsto: https://github.com/Rober-prog/habitalia-consulting
+Vista publicada: https://rober-prog.github.io/habitalia-consulting/
+Repositorio: https://github.com/Rober-prog/habitalia-consulting
 
 El titular autoriza expresamente subir el proyecto y crear esta vista el
 18/11/2026. No se modifica el dominio corporativo ni DNS. La vista conserva
 noindex y el formulario se sustituye por contacto mediante correo y teléfono.
+
+## Resultado comprobado
+
+Primer despliegue completado con éxito mediante el workflow
+https://github.com/Rober-prog/habitalia-consulting/actions/runs/44415184521
+(revisión bf37b39294533615d45d1066059d497b76a39729).
+Tipos: 32 archivos sin errores, avisos ni hints. Formato correcto.
+Build y validación estática: 28 páginas, 14 fallbacks y 808 referencias locales.
+68 auditorías axe sin infracciones. Chrome verifica la vista local y publicada
+en es/ca a 390/768/1440 px, las imágenes, el contacto y los 14 enlaces antiguos.
+El logotipo conserva su archivo original y sus proporciones.
 
 ## Desarrollo local
 
