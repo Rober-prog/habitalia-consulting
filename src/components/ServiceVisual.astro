@@ -1,0 +1,53 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { ui, type Lang } from '../i18n/ui';
+interface Props {
+  category: CollectionEntry<'categories'>;
+  lang: Lang;
+  eager?: boolean;
+  large?: boolean;
+}
+const { category, lang, eager = false, large = false } = Astro.props;
+const sources = import.meta.glob<ImageMetadata>('../../assets/services/*.png', {
+  eager: true,
+  import: 'default',
+});
+const source = sources[`../../assets/services/${category.id}.png`];
+const widths = [360, 640, 960, 1280, 1600].filter(
+  (width) => !source || width <= source.width,
+);
+---
+
+<figure class:list={['category-visual', { 'category-visual-large': large }]}>
+  {
+    source ? (
+      <Picture
+        src={source}
+        formats={['avif', 'webp']}
+        fallbackFormat="webp"
+        widths={widths}
+        sizes={
+          large
+            ? '(min-width: 1100px) 45vw, 90vw'
+            : '(min-width: 1100px) 30vw, (min-width: 700px) 45vw, 90vw'
+        }
+        alt={category.data.imageAlt[lang]}
+        width={large ? 1280 : 960}
+        height={large ? 960 : 720}
+        fit="cover"
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+    ) : (
+      <div
+        class="category-visual-pending"
+        role="img"
+        aria-label={ui[lang].imagePending}
+      >
+        <span>{ui[lang].imagePending}</span>
+      </div>
+    )
+  }
+</figure>

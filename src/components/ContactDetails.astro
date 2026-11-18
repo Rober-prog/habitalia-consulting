@@ -1,0 +1,36 @@
+---
+import { site } from '../data/site';
+import { ui, type Lang } from '../i18n/ui';
+import LocationMap from './LocationMap.astro';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+const c = site.contact;
+---
+
+<section
+  class="contact-info confirmed-contact"
+  aria-labelledby="contact-address-title"
+>
+  <p class="eyebrow">Habitalia Consulting</p>
+  <h2 id="contact-address-title">{t.address}</h2>
+  <address class="contact-address">
+    {c.street[lang]}<br />{`${c.postalCode} ${c.city}`}<br />{c.province} · {
+      c.country[lang]
+    }
+  </address>
+  <dl class="contact-channels">
+    <div>
+      <dt>{t.emailLabel}</dt><dd>
+        <a href={c.emailHref}>{c.email}<span aria-hidden="true"> ↗</span></a>
+      </dd>
+    </div><div>
+      <dt>{t.phoneLabel}</dt><dd>
+        <a href={c.phoneHref}>{c.phone}<span aria-hidden="true"> ↗</span></a>
+      </dd>
+    </div>
+  </dl>
+  <LocationMap {lang} />
+</section>

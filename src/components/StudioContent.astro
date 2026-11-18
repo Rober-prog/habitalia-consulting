@@ -1,0 +1,14 @@
+---
+import { getEntry, render } from 'astro:content';
+import type { Lang } from '../i18n/ui';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const entry = await getEntry('about', lang);
+if (!entry || entry.data.lang !== lang)
+  throw new Error(`Missing About content for ${lang}`);
+const { Content } = await render(entry);
+---
+
+<article class="studio-story"><Content /></article>

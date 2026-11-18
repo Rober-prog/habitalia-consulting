@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { href, ui, type Lang } from '../i18n/ui';
+import ServiceVisual from './ServiceVisual.astro';
+import CTA from './CTA.astro';
+interface Props {
+  category: CollectionEntry<'categories'>;
+  categories: CollectionEntry<'categories'>[];
+  lang: Lang;
+}
+const { category, categories, lang } = Astro.props;
+const { data } = category;
+const t = ui[lang];
+---
+
+<section class="container category-heading">
+  <div>
+    <p class="eyebrow">
+      {t.categoryLabel} / {String(data.order).padStart(2, '0')}
+    </p><h1>{data.title[lang]}</h1><p class="large-copy">
+      {data.summary[lang]}
+    </p>
+  </div>
+  <div>
+    <ServiceVisual {category} {lang} eager large /><p class="category-art-note">
+      {t.conceptArt}
+    </p>
+  </div>
+</section>
+<div class="container category-detail section-bottom">
+  <article class="category-body">
+    <p class="category-intro">{data.intro[lang]}</p>
+    <section aria-labelledby="included-title">
+      <h2 id="included-title">{t.includedServices}</h2><div
+        class="included-services"
+      >
+        {
+          data.items.map((item) => (
+            <section id={item.id} class="included-service">
+              <>
+                <h3>{item.title[lang]}</h3>
+                <p>{item.description[lang]}</p>
+              </>
+            </section>
+          ))
+        }
+      </div>
+    </section>
+    <section><h2>{t.audience}</h2><p>{data.audience[lang]}</p></section>
+    <section><h2>{t.scope}</h2><p>{data.scope[lang]}</p></section>
+    <section><h2>{t.documents}</h2><p>{data.documents[lang]}</p></section>
+    <section>
+      <h2>{t.process}</h2><ol>
+        {
+          t.steps.map(([name, text]) => (
+            <li>
+              <strong>{name}.</strong> {text}
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+    <a class="text-link" href={href(lang, 'services')}>← {t.back}</a>
+  </article>
+  <aside class="category-sidebar">
+    <p class="eyebrow">{t.exploreCategories}</p><nav
+      aria-label={t.exploreCategories}
+    >
+      {
+        categories
+          .filter((item) => item.id !== category.id)
+          .map((item) => (
+            <a href={`${href(lang, 'services')}${item.data.slug[lang]}/`}>
+              {item.data.title[lang]} <span aria-hidden="true">↗</span>
+            </a>
+          ))
+      }
+    </nav><a class="button" href={href(lang, 'contact')}
+      >{t.nav.contact}<span aria-hidden="true">↗</span></a
+    >
+  </aside>
+</div>
+<CTA {lang} />

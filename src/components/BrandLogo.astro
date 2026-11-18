@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/brand/logo-habitalia-actual.png';
+interface Props {
+  loading?: 'eager' | 'lazy';
+}
+const { loading = 'eager' } = Astro.props;
+---
+
+<Image
+  src={logo}
+  width={345}
+  height={Math.round((345 * logo.height) / logo.width)}
+  densities={[1, 2]}
+  format="png"
+  alt="Habitalia Consulting — Solucions en arquitectura & management"
+  {loading}
+/>

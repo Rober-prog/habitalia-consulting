@@ -1,0 +1,365 @@
+[
+  {
+    "id": "direction",
+    "order": 1,
+    "slug": { "es": "direccion-gestion-obras", "ca": "direccio-gestio-obres" },
+    "title": {
+      "es": "Dirección y gestión de obras",
+      "ca": "Direcció i gestió d’obres"
+    },
+    "summary": {
+      "es": "Coordinación técnica y económica para ordenar las decisiones de cada obra.",
+      "ca": "Coordinació tècnica i econòmica per ordenar les decisions de cada obra."
+    },
+    "metaDescription": {
+      "es": "Direcciones de obras, Project Management, presupuestos y certificaciones. Conoce los servicios de dirección y gestión de obras de Habitalia Consulting.",
+      "ca": "Direccions d’obres, Project Management, pressupostos i certificacions. Coneix els serveis de direcció i gestió d’obres de Habitalia Consulting."
+    },
+    "intro": {
+      "es": "Una obra reúne decisiones técnicas, interlocutores y recursos que conviene coordinar desde el inicio. Esta categoría agrupa el seguimiento de la ejecución, la gestión del proyecto y el control de su información económica.",
+      "ca": "Una obra reuneix decisions tècniques, interlocutors i recursos que convé coordinar des de l’inici. Aquesta categoria agrupa el seguiment de l’execució, la gestió del projecte i el control de la seva informació econòmica."
+    },
+    "audience": {
+      "es": "Personas promotoras, propiedad y equipos que necesitan organizar una obra y su seguimiento.",
+      "ca": "Persones promotores, propietat i equips que necessiten organitzar una obra i el seu seguiment."
+    },
+    "scope": {
+      "es": "El encargo permite definir qué funciones de dirección, coordinación y seguimiento económico se necesitan, qué agentes participan y cómo se documentan las decisiones. El alcance y las responsabilidades se acuerdan para cada actuación.",
+      "ca": "L’encàrrec permet definir quines funcions de direcció, coordinació i seguiment econòmic es necessiten, quins agents hi participen i com es documenten les decisions. L’abast i les responsabilitats s’acorden per a cada actuació."
+    },
+    "documents": {
+      "es": "Proyecto y planos disponibles, estado de la obra, relación de agentes, presupuesto y mediciones existentes. La información necesaria se concreta según el encargo.",
+      "ca": "Projecte i plànols disponibles, estat de l’obra, relació d’agents, pressupost i amidaments existents. La informació necessària es concreta segons l’encàrrec."
+    },
+    "imageAlt": {
+      "es": "Maqueta conceptual de edificio con estructura en construcción y elementos de planificación",
+      "ca": "Maqueta conceptual d’edifici amb estructura en construcció i elements de planificació"
+    },
+    "items": [
+      {
+        "id": "direcciones-obras",
+        "title": { "es": "Direcciones de obras", "ca": "Direccions d’obres" },
+        "description": {
+          "es": "Seguimiento técnico de la ejecución, de acuerdo con las funciones y responsabilidades definidas en el encargo.",
+          "ca": "Seguiment tècnic de l’execució, d’acord amb les funcions i responsabilitats definides en l’encàrrec."
+        }
+      },
+      {
+        "id": "project-management",
+        "title": { "es": "Project Management", "ca": "Project Management" },
+        "description": {
+          "es": "Organización de interlocutores, decisiones y etapas para mantener una visión de conjunto del proyecto.",
+          "ca": "Organització d’interlocutors, decisions i etapes per mantenir una visió de conjunt del projecte."
+        }
+      },
+      {
+        "id": "presupuestos-certificaciones",
+        "title": {
+          "es": "Presupuestos y certificaciones",
+          "ca": "Pressupostos i certificacions"
+        },
+        "description": {
+          "es": "Preparación y revisión de partidas, mediciones y documentación económica para el seguimiento de la obra.",
+          "ca": "Preparació i revisió de partides, amidaments i documentació econòmica per al seguiment de l’obra."
+        }
+      }
+    ]
+  },
+  {
+    "id": "projects",
+    "order": 2,
+    "slug": {
+      "es": "proyectos-tecnicos-reformas",
+      "ca": "projectes-tecnics-reformes"
+    },
+    "title": {
+      "es": "Proyectos técnicos y reformas",
+      "ca": "Projectes tècnics i reformes"
+    },
+    "summary": {
+      "es": "Del estudio de una necesidad a la definición técnica de la intervención.",
+      "ca": "De l’estudi d’una necessitat a la definició tècnica de la intervenció."
+    },
+    "metaDescription": {
+      "es": "Proyectos técnicos de reformas y actividades y proyectos de todo tipo. Explora la planificación y definición técnica de intervenciones con Habitalia Consulting.",
+      "ca": "Projectes tècnics de reformes i activitats i projectes de tota mena. Explora la planificació i definició tècnica d’intervencions amb Habitalia Consulting."
+    },
+    "intro": {
+      "es": "Definir un proyecto empieza por entender el uso del espacio, las necesidades de la propiedad y las condiciones de partida. Reunimos aquí la preparación de proyectos técnicos y el estudio de intervenciones de distinta naturaleza.",
+      "ca": "Definir un projecte comença per entendre l’ús de l’espai, les necessitats de la propietat i les condicions de partida. Reunim aquí la preparació de projectes tècnics i l’estudi d’intervencions de naturalesa diversa."
+    },
+    "audience": {
+      "es": "Propiedad y personas promotoras que preparan una reforma, una actividad o un nuevo encargo técnico.",
+      "ca": "Propietat i persones promotores que preparen una reforma, una activitat o un nou encàrrec tècnic."
+    },
+    "scope": {
+      "es": "Se estudian el objetivo, la información del inmueble y las necesidades documentales para definir una propuesta técnica. La viabilidad, el equipo y las tareas se concretan según las características de cada proyecto.",
+      "ca": "S’estudien l’objectiu, la informació de l’immoble i les necessitats documentals per definir una proposta tècnica. La viabilitat, l’equip i les tasques es concreten segons les característiques de cada projecte."
+    },
+    "documents": {
+      "es": "Planos, fotografías propias, descripción del uso actual y previsto y documentación técnica disponible. Puede ser necesario completar esta información antes de definir el proyecto.",
+      "ca": "Plànols, fotografies pròpies, descripció de l’ús actual i previst i documentació tècnica disponible. Pot caldre completar aquesta informació abans de definir el projecte."
+    },
+    "imageAlt": {
+      "es": "Maqueta conceptual de vivienda seccionada con distribución interior y una partición de reforma",
+      "ca": "Maqueta conceptual d’habitatge seccionat amb distribució interior i una partició de reforma"
+    },
+    "items": [
+      {
+        "id": "proyectos-reformas-actividades",
+        "title": {
+          "es": "Proyectos técnicos de reformas y actividades",
+          "ca": "Projectes tècnics de reformes i activitats"
+        },
+        "description": {
+          "es": "Definición técnica y documental de reformas y actividades a partir de las necesidades y condiciones del espacio.",
+          "ca": "Definició tècnica i documental de reformes i activitats a partir de les necessitats i condicions de l’espai."
+        }
+      },
+      {
+        "id": "proyectos-todo-tipo",
+        "title": {
+          "es": "Proyectos de todo tipo",
+          "ca": "Projectes de tota mena"
+        },
+        "description": {
+          "es": "Estudio de encargos de distinta naturaleza para determinar su alcance, documentación y disciplinas necesarias.",
+          "ca": "Estudi d’encàrrecs de naturalesa diversa per determinar-ne l’abast, la documentació i les disciplines necessàries."
+        }
+      }
+    ]
+  },
+  {
+    "id": "reports",
+    "order": 3,
+    "slug": {
+      "es": "informes-peritajes-valoraciones",
+      "ca": "informes-peritatges-valoracions"
+    },
+    "title": {
+      "es": "Informes, peritajes y valoraciones",
+      "ca": "Informes, peritatges i valoracions"
+    },
+    "summary": {
+      "es": "Análisis técnico y documentación para comprender una situación y fundamentar decisiones.",
+      "ca": "Anàlisi tècnica i documentació per comprendre una situació i fonamentar decisions."
+    },
+    "metaDescription": {
+      "es": "Informes periciales y valoraciones inmobiliarias: análisis de documentación y condiciones del inmueble con un alcance definido para cada consulta.",
+      "ca": "Informes pericials i valoracions immobiliàries: anàlisi de documentació i condicions de l’immoble amb un abast definit per a cada consulta."
+    },
+    "intro": {
+      "es": "Cuando una decisión necesita una base técnica, conviene identificar qué debe analizarse y con qué información. Esta categoría reúne los informes periciales y las valoraciones inmobiliarias, con un objeto y un alcance concretos.",
+      "ca": "Quan una decisió necessita una base tècnica, convé identificar què cal analitzar i amb quina informació. Aquesta categoria reuneix els informes pericials i les valoracions immobiliàries, amb un objecte i un abast concrets."
+    },
+    "audience": {
+      "es": "Propiedad, comunidades y personas que necesitan documentar una cuestión técnica o conocer una valoración de un inmueble.",
+      "ca": "Propietat, comunitats i persones que necessiten documentar una qüestió tècnica o conèixer una valoració d’un immoble."
+    },
+    "scope": {
+      "es": "Se define la finalidad del documento, se revisan los antecedentes y se determina qué comprobaciones o visitas son necesarias. Las conclusiones se vinculan a la información y al alcance del estudio.",
+      "ca": "Es defineix la finalitat del document, es revisen els antecedents i es determina quines comprovacions o visites calen. Les conclusions es vinculen a la informació i a l’abast de l’estudi."
+    },
+    "documents": {
+      "es": "Descripción de la consulta, identificación del inmueble, antecedentes, informes previos y documentación disponible relacionada con el objeto del análisis.",
+      "ca": "Descripció de la consulta, identificació de l’immoble, antecedents, informes previs i documentació disponible relacionada amb l’objecte de l’anàlisi."
+    },
+    "imageAlt": {
+      "es": "Maqueta conceptual de edificio con lupa y elementos discretos de análisis técnico",
+      "ca": "Maqueta conceptual d’edifici amb lupa i elements discrets d’anàlisi tècnica"
+    },
+    "items": [
+      {
+        "id": "informes-periciales",
+        "title": { "es": "Informes periciales", "ca": "Informes pericials" },
+        "description": {
+          "es": "Análisis y exposición documentada de una cuestión técnica, sus antecedentes y las comprobaciones realizadas.",
+          "ca": "Anàlisi i exposició documentada d’una qüestió tècnica, els seus antecedents i les comprovacions realitzades."
+        }
+      },
+      {
+        "id": "valoraciones-inmobiliarias",
+        "title": {
+          "es": "Valoraciones inmobiliarias",
+          "ca": "Valoracions immobiliàries"
+        },
+        "description": {
+          "es": "Estudio del inmueble y de la información pertinente para una valoración cuya finalidad se concreta al inicio.",
+          "ca": "Estudi de l’immoble i de la informació pertinent per a una valoració la finalitat de la qual es concreta a l’inici."
+        }
+      }
+    ]
+  },
+  {
+    "id": "property",
+    "order": 4,
+    "slug": {
+      "es": "tramitaciones-gestion-inmobiliaria",
+      "ca": "tramitacions-gestio-immobiliaria"
+    },
+    "title": {
+      "es": "Tramitaciones y gestión inmobiliaria",
+      "ca": "Tramitacions i gestió immobiliària"
+    },
+    "summary": {
+      "es": "Documentación y coordinación para dar orden a los trámites de un inmueble.",
+      "ca": "Documentació i coordinació per donar ordre als tràmits d’un immoble."
+    },
+    "metaDescription": {
+      "es": "Tramitaciones y agrupación y segregación horizontal. Conoce cómo se organiza la información y el alcance de la gestión documental inmobiliaria.",
+      "ca": "Tramitacions i agrupació i segregació horitzontal. Coneix com s’organitzen la informació i l’abast de la gestió documental immobiliària."
+    },
+    "intro": {
+      "es": "La gestión de un inmueble requiere reunir antecedentes y coordinar documentación e interlocutores. Agrupamos los trámites y las actuaciones de agrupación y segregación horizontal para estudiar cada situación con una visión ordenada.",
+      "ca": "La gestió d’un immoble requereix reunir antecedents i coordinar documentació i interlocutors. Agrupem els tràmits i les actuacions d’agrupació i segregació horitzontal per estudiar cada situació amb una visió ordenada."
+    },
+    "audience": {
+      "es": "Personas propietarias y comunidades que necesitan preparar documentación o estudiar una reorganización de sus inmuebles.",
+      "ca": "Persones propietàries i comunitats que necessiten preparar documentació o estudiar una reorganització dels seus immobles."
+    },
+    "scope": {
+      "es": "Se revisan la situación de partida, el objetivo del trámite y la documentación disponible. Los pasos, las comprobaciones y la intervención de otros profesionales se concretan para el caso particular.",
+      "ca": "Es revisen la situació de partida, l’objectiu del tràmit i la documentació disponible. Els passos, les comprovacions i la intervenció d’altres professionals es concreten per al cas particular."
+    },
+    "documents": {
+      "es": "Identificación de los inmuebles, planos y documentación descriptiva disponible, antecedentes de trámites y una explicación del objetivo de la gestión.",
+      "ca": "Identificació dels immobles, plànols i documentació descriptiva disponible, antecedents de tràmits i una explicació de l’objectiu de la gestió."
+    },
+    "imageAlt": {
+      "es": "Composición conceptual de planos sin texto, documentos y volúmenes sobre parcelas",
+      "ca": "Composició conceptual de plànols sense text, documents i volums sobre parcel·les"
+    },
+    "items": [
+      {
+        "id": "tramitaciones",
+        "title": { "es": "Tramitaciones", "ca": "Tramitacions" },
+        "description": {
+          "es": "Organización y preparación de la información necesaria para los trámites incluidos en el encargo.",
+          "ca": "Organització i preparació de la informació necessària per als tràmits inclosos en l’encàrrec."
+        }
+      },
+      {
+        "id": "agrupacion-segregacion-horizontal",
+        "title": {
+          "es": "Agrupación y segregación horizontal",
+          "ca": "Agrupació i segregació horitzontal"
+        },
+        "description": {
+          "es": "Estudio de la documentación y de las condiciones de una agrupación o segregación horizontal, con los interlocutores que correspondan.",
+          "ca": "Estudi de la documentació i de les condicions d’una agrupació o segregació horitzontal, amb els interlocutors que corresponguin."
+        }
+      }
+    ]
+  },
+  {
+    "id": "safety",
+    "order": 5,
+    "slug": {
+      "es": "seguridad-asesoramiento-especializado",
+      "ca": "seguretat-assessorament-especialitzat"
+    },
+    "title": {
+      "es": "Seguridad y asesoramiento especializado",
+      "ca": "Seguretat i assessorament especialitzat"
+    },
+    "summary": {
+      "es": "Coordinación preventiva y una mirada técnica para situaciones que requieren un estudio particular.",
+      "ca": "Coordinació preventiva i una mirada tècnica per a situacions que requereixen un estudi particular."
+    },
+    "metaDescription": {
+      "es": "Coordinaciones de seguridad y salud y asesoramiento en casos difíciles. Un estudio técnico específico de necesidades, antecedentes y agentes de cada actuación.",
+      "ca": "Coordinacions de seguretat i salut i assessorament en casos difícils. Un estudi tècnic específic de necessitats, antecedents i agents de cada actuació."
+    },
+    "intro": {
+      "es": "Algunas actuaciones requieren coordinar la prevención y otras presentan cuestiones que no encajan en una respuesta estándar. Esta categoría reúne la coordinación de seguridad y salud y el estudio particular de casos difíciles.",
+      "ca": "Algunes actuacions requereixen coordinar la prevenció i d’altres presenten qüestions que no encaixen en una resposta estàndard. Aquesta categoria reuneix la coordinació de seguretat i salut i l’estudi particular de casos difícils."
+    },
+    "audience": {
+      "es": "Promotores y equipos de obra, así como personas con una situación técnica compleja que necesita una primera valoración de su alcance.",
+      "ca": "Promotors i equips d’obra, així com persones amb una situació tècnica complexa que necessita una primera valoració del seu abast."
+    },
+    "scope": {
+      "es": "Se identifican las necesidades de coordinación o el problema concreto, los antecedentes y los agentes implicados. En los casos difíciles, el primer paso consiste en delimitar la cuestión y valorar las vías de estudio.",
+      "ca": "S’identifiquen les necessitats de coordinació o el problema concret, els antecedents i els agents implicats. En els casos difícils, el primer pas consisteix a delimitar la qüestió i valorar les vies d’estudi."
+    },
+    "documents": {
+      "es": "Información de la actuación y sus agentes, fase de obra o antecedentes del caso, documentación técnica y descripción de la cuestión que se necesita resolver.",
+      "ca": "Informació de l’actuació i dels seus agents, fase d’obra o antecedents del cas, documentació tècnica i descripció de la qüestió que cal resoldre."
+    },
+    "imageAlt": {
+      "es": "Maqueta conceptual de estructura de obra con casco y barreras discretas de seguridad",
+      "ca": "Maqueta conceptual d’estructura d’obra amb casc i barreres discretes de seguretat"
+    },
+    "items": [
+      {
+        "id": "coordinaciones-seguridad-salud",
+        "title": {
+          "es": "Coordinaciones de seguridad y salud",
+          "ca": "Coordinacions de seguretat i salut"
+        },
+        "description": {
+          "es": "Coordinación de los aspectos preventivos de la actuación según las funciones y el alcance acordados.",
+          "ca": "Coordinació dels aspectes preventius de l’actuació segons les funcions i l’abast acordats."
+        }
+      },
+      {
+        "id": "casos-dificiles",
+        "title": { "es": "Casos difíciles", "ca": "Casos difícils" },
+        "description": {
+          "es": "Estudio individual de situaciones complejas para ordenar sus antecedentes, identificar las preguntas técnicas y plantear los siguientes pasos.",
+          "ca": "Estudi individual de situacions complexes per ordenar-ne els antecedents, identificar les preguntes tècniques i plantejar els passos següents."
+        }
+      }
+    ]
+  },
+  {
+    "id": "wellbeing",
+    "order": 6,
+    "slug": {
+      "es": "diseno-bienestar-espacios",
+      "ca": "disseny-benestar-espais"
+    },
+    "title": {
+      "es": "Diseño y bienestar de espacios",
+      "ca": "Disseny i benestar dels espais"
+    },
+    "summary": {
+      "es": "Una lectura de los espacios desde la distribución, los materiales y el equilibrio de la composición.",
+      "ca": "Una lectura dels espais des de la distribució, els materials i l’equilibri de la composició."
+    },
+    "metaDescription": {
+      "es": "Feng Shui dentro del diseño y bienestar de espacios: distribución, materiales y composición serena para estudiar el equilibrio del entorno arquitectónico.",
+      "ca": "Feng Shui dins del disseny i benestar dels espais: distribució, materials i composició serena per estudiar l’equilibri de l’entorn arquitectònic."
+    },
+    "intro": {
+      "es": "La forma de organizar un espacio influye en cómo lo recorremos y utilizamos. Esta categoría presenta el Feng Shui como una lectura del entorno, su distribución y su composición, atendiendo a las preferencias de quienes lo habitan.",
+      "ca": "La manera d’organitzar un espai influeix en com el recorrem i l’utilitzem. Aquesta categoria presenta el Feng Shui com una lectura de l’entorn, la seva distribució i la seva composició, atenent les preferències de qui l’habita."
+    },
+    "audience": {
+      "es": "Personas interesadas en estudiar la organización de sus espacios y explorar una composición más equilibrada.",
+      "ca": "Persones interessades a estudiar l’organització dels seus espais i explorar una composició més equilibrada."
+    },
+    "scope": {
+      "es": "Se revisan la distribución, los recorridos, los elementos presentes y los objetivos de uso. Las propuestas se definen según el espacio y las preferencias del cliente.",
+      "ca": "Es revisen la distribució, els recorreguts, els elements presents i els objectius d’ús. Les propostes es defineixen segons l’espai i les preferències del client."
+    },
+    "documents": {
+      "es": "Plano o croquis del espacio, fotografías propias, usos actuales y una explicación de las preferencias y objetivos de la consulta.",
+      "ca": "Plànol o croquis de l’espai, fotografies pròpies, usos actuals i una explicació de les preferències i els objectius de la consulta."
+    },
+    "imageAlt": {
+      "es": "Maqueta conceptual de interior sereno con madera clara, piedra y composición espacial equilibrada",
+      "ca": "Maqueta conceptual d’interior serè amb fusta clara, pedra i composició espacial equilibrada"
+    },
+    "items": [
+      {
+        "id": "feng-shui",
+        "title": { "es": "Feng Shui", "ca": "Feng Shui" },
+        "description": {
+          "es": "Lectura y propuesta de organización del espacio a partir de su distribución, sus materiales y el equilibrio de sus elementos.",
+          "ca": "Lectura i proposta d’organització de l’espai a partir de la seva distribució, els seus materials i l’equilibri dels seus elements."
+        }
+      }
+    ]
+  }
+]

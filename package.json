@@ -1,0 +1,39 @@
+{
+  "name": "habitalia-consulting",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "lint": "prettier --check src scripts tests astro.config.mjs tsconfig.json package.json",
+    "format": "prettier --write src scripts tests astro.config.mjs tsconfig.json package.json",
+    "test": "node scripts/check-build.mjs",
+    "test:browser": "playwright test",
+    "test:performance": "node scripts/performance.mjs",
+    "runtime": "node -p \"process.version + ' ' + process.execPath\"",
+    "qa": "npm run check && npm run lint && npm run build && npm test && npm run test:browser"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "4.1.18",
+    "astro": "7.4.12",
+    "tailwindcss": "4.1.18"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^22.20.5",
+    "chrome-launcher": "1.2.3",
+    "lighthouse": "13.6.0",
+    "node": "22.23.4",
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
+  }
+}

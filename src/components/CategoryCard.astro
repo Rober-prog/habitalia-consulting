@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { href, ui, type Lang } from '../i18n/ui';
+import ServiceVisual from './ServiceVisual.astro';
+interface Props {
+  category: CollectionEntry<'categories'>;
+  lang: Lang;
+  heading?: 'h2' | 'h3';
+}
+const { category, lang, heading: Heading = 'h3' } = Astro.props;
+const t = ui[lang];
+---
+
+<article class="category-card" data-category={category.id}>
+  <ServiceVisual {category} {lang} />
+  <div class="category-card-copy">
+    <div class="category-card-index">
+      <span>{String(category.data.order).padStart(2, '0')}</span><span
+        aria-hidden="true">↗</span
+      >
+    </div>
+    <Heading
+      ><a href={`${href(lang, 'services')}${category.data.slug[lang]}/`}
+        >{category.data.title[lang]}</a
+      ></Heading
+    >
+    <p>{category.data.summary[lang]}</p>
+    <span class="category-card-link" aria-hidden="true"
+      >{t.viewCategory}<span>↗</span></span
+    >
+  </div>
+</article>

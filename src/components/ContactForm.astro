@@ -1,0 +1,29 @@
+---
+import { ui, type Lang } from '../i18n/ui';
+import { site } from '../data/site';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+---
+
+<section
+  class="contact-form contact-invitation"
+  aria-labelledby="contact-invitation-title"
+>
+  <p class="eyebrow">{t.ctaEyebrow}</p>
+  <h2 id="contact-invitation-title">{t.formTitle}</h2>
+  <p class="contact-invitation-copy">
+    {
+      lang === 'ca'
+        ? 'Explica’ns què necessites, on se situa l’immoble i quina documentació tens. T’ajudarem a definir el següent pas.'
+        : 'Cuéntanos qué necesitas, dónde se sitúa el inmueble y qué documentación tienes. Te ayudaremos a definir el siguiente paso.'
+    }
+  </p>
+  <a class="button" href={site.contact.emailHref}>
+    {lang === 'ca' ? 'Escriu-nos' : 'Escríbenos'}<span aria-hidden="true"
+      >↗</span
+    >
+  </a>
+</section>

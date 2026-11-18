@@ -1,0 +1,266 @@
+---
+import raw from '../../public/assets/map/osm-context.json';
+import { site } from '../data/site';
+import { ui, type Lang } from '../i18n/ui';
+interface Props {
+  lang: Lang;
+}
+interface Point {
+  lat: number;
+  lon: number;
+}
+interface Way {
+  id: number;
+  type: string;
+  tags?: Record<string, string | undefined>;
+  geometry?: Point[];
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+const c = site.contact;
+const sourceWays: Way[] = raw.elements.filter(
+  (way) => way.type === 'way' && way.geometry?.length,
+);
+const project = (point: Point) => ({
+  x:
+    320 +
+    ((point.lon - c.longitude) *
+      111320 *
+      Math.cos((c.latitude * Math.PI) / 180)) /
+      1.1,
+  y: 225 - ((point.lat - c.latitude) * 111320) / 1.1,
+});
+// This is a static, intentionally simplified locator: at most 98 OSM ways
+// plus one address point. See OSMF Attribution Guidelines, Static images.
+// Original source data and its licence remain available in public/assets/map.
+const visibleWays = sourceWays.filter((way) => {
+  const points = way.geometry!.map(project);
+  return (
+    Math.min(...points.map((p) => p.x)) < 640 &&
+    Math.max(...points.map((p) => p.x)) > 0 &&
+    Math.min(...points.map((p) => p.y)) < 400 &&
+    Math.max(...points.map((p) => p.y)) > 0
+  );
+});
+const distance = (way: Way) =>
+  Math.min(
+    ...way.geometry!.map((point) => {
+      const p = project(point);
+      return Math.hypot(p.x - 320, p.y - 225);
+    }),
+  );
+const select = (
+  predicate: (way: Way) => boolean,
+  count: number,
+  score = distance,
+) =>
+  visibleWays
+    .filter(predicate)
+    .sort((a, b) => score(a) - score(b))
+    .slice(0, count);
+const ways = [
+  ...new Map(
+    [
+      ...select(
+        (way) => !!way.tags?.highway,
+        54,
+        (way) =>
+          distance(way) -
+          (/am.lia soler|santa digna|nostra senyora|rafael soler/i.test(
+            way.tags?.name || '',
+          )
+            ? 1000
+            : 0),
+      ),
+      ...select((way) => !!way.tags?.building, 36),
+      ...select((way) => way.tags?.leisure === 'park', 4),
+      ...select((way) => way.tags?.railway === 'rail', 4),
+    ].map((way) => [way.id, way]),
+  ).values(),
+];
+const path = (way: Way) =>
+  way
+    .geometry!.map((point, i) => {
+      const p = project(point);
+      return `${i ? 'L' : 'M'}${p.x.toFixed(1)},${p.y.toFixed(1)}`;
+    })
+    .join(' ');
+const roads = ways.filter((way) => way.tags?.highway);
+const isAmalia = (way: Way) =>
+  /amalia soler/i.test(
+    (way.tags?.name || '').normalize('NFD').replace(/[\u0300-\u036f]/g, ''),
+  );
+const names = [
+  'Carrer Amàlia Soler',
+  'Carrer de Santa Digna',
+  'Rambla de Nostra Senyora',
+  'Passeig de Rafael Soler',
+];
+const labels = names.flatMap((name) => {
+  const candidates = roads
+    .filter((way) => way.tags?.name === name)
+    .flatMap((way) => {
+      const points = way
+        .geometry!.map(project)
+        .filter(
+          (p) =>
+            p.x > 55 &&
+            p.x < 585 &&
+            p.y > 60 &&
+            p.y < 350 &&
+            !(Math.abs(p.x - 320) < 125 && Math.abs(p.y - 205) < 80),
+        );
+      if (points.length < 2) return [];
+      const first = points[0],
+        last = points[points.length - 1];
+      let angle =
+        (Math.atan2(last.y - first.y, last.x - first.x) * 180) / Math.PI;
+      if (angle > 90) angle -= 180;
+      if (angle < -90) angle += 180;
+      return [
+        {
+          name,
+          x: (first.x + last.x) / 2,
+          y: (first.y + last.y) / 2,
+          angle,
+          length: Math.hypot(last.x - first.x, last.y - first.y),
+        },
+      ];
+    })
+    .sort((a, b) => b.length - a.length);
+  return candidates.length ? [candidates[0]] : [];
+});
+---
+
+<figure
+  class="location-map"
+  aria-labelledby="location-map-title"
+  data-latitude={c.latitude}
+  data-longitude={c.longitude}
+  data-map-feature-count={ways.length + 1}
+>
+  <div class="location-map-heading">
+    <span class="eyebrow" id="location-map-title">{t.locationLabel}</span><span
+      >08720 / VILAFRANCA</span
+    >
+  </div>
+  <a
+    class="location-map-link"
+    href={c.mapHref}
+    rel="noopener noreferrer"
+    aria-label={t.openMap}
+  >
+    <svg
+      class="location-map-drawing"
+      viewBox="0 0 640 400"
+      role="img"
+      aria-labelledby="map-svg-title map-svg-desc"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title id="map-svg-title">{t.mapTitle}</title><desc id="map-svg-desc"
+        >{t.mapDescription}</desc
+      >
+      <rect width="640" height="400" fill="#e9ede4"></rect>
+      <g fill="#dce2d4" stroke="#d1d9c8" stroke-width=".65"
+        >{
+          ways
+            .filter((way) => way.tags?.building)
+            .map((way) => <path d={`${path(way)} Z`} />)
+        }</g
+      >
+      <g fill="#cbd7bd"
+        >{
+          ways
+            .filter((way) => way.tags?.leisure === 'park')
+            .map((way) => <path d={`${path(way)} Z`} />)
+        }</g
+      >
+      <g
+        fill="none"
+        stroke="#f9faf6"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        >{
+          roads.map((way) => (
+            <path
+              d={path(way)}
+              stroke-width={
+                ['primary', 'secondary', 'tertiary'].includes(
+                  way.tags?.highway || '',
+                )
+                  ? 12
+                  : way.tags!.highway === 'footway'
+                    ? 3
+                    : 7
+              }
+            />
+          ))
+        }</g
+      >
+      <g fill="none" stroke="#87927d" stroke-width="2" stroke-dasharray="3 4"
+        >{
+          ways
+            .filter((way) => way.tags?.railway === 'rail')
+            .map((way) => <path d={path(way)} />)
+        }</g
+      >
+      <g
+        fill="none"
+        stroke="#ba1726"
+        stroke-width="3"
+        stroke-linecap="round"
+        opacity=".6"
+        >{roads.filter(isAmalia).map((way) => <path d={path(way)} />)}</g
+      >
+      <g
+        class="map-street-labels"
+        fill="#48523f"
+        stroke="#f9faf6"
+        stroke-width="4"
+        paint-order="stroke"
+        font-size="13"
+        font-family="Arial, sans-serif"
+        text-anchor="middle"
+        >{
+          labels.map((label) => (
+            <text
+              transform={`translate(${label.x.toFixed(1)} ${label.y.toFixed(1)}) rotate(${label.angle.toFixed(1)})`}
+            >
+              {label.name}
+            </text>
+          ))
+        }</g
+      >
+      <g aria-hidden="true"
+        ><circle cx="320" cy="225" r="22" fill="#ba1726" opacity=".1"
+        ></circle><circle cx="320" cy="225" r="12" fill="#ba1726" opacity=".14"
+        ></circle><path
+          d="M320 225C317 220 303 210 303 198a17 17 0 0 1 34 0c0 12-14 22-17 27Z"
+          fill="#ba1726"
+          stroke="#fff"
+          stroke-width="2"></path><circle cx="320" cy="198" r="5" fill="#fff"
+        ></circle></g
+      >
+      <g aria-hidden="true" fill="#48523f"
+        ><path d="m603 34 6 18-6-4-6 4Z"></path><text
+          x="603"
+          y="26"
+          text-anchor="middle"
+          font-size="12"
+          font-family="Arial, sans-serif">N</text
+        ></g
+      >
+    </svg>
+    <span class="map-location-label"
+      ><strong>Habitalia Consulting</strong><span
+        >{lang === 'ca' ? 'Amàlia Soler, 1' : 'Amalia Soler, 1'}</span
+      ></span
+    >
+    <span class="map-open-icon" aria-hidden="true">↗</span>
+  </a>
+  <figcaption class="location-map-caption">
+    <a class="map-open-text" href={c.mapHref} rel="noopener noreferrer"
+      >{t.openMap}<span aria-hidden="true"> ↗</span></a
+    >
+  </figcaption>
+</figure>

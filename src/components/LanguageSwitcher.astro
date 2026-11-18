@@ -1,0 +1,27 @@
+---
+import type { Lang } from '../i18n/ui';
+import { ui } from '../i18n/ui';
+interface Props {
+  lang: Lang;
+  alternate: string;
+}
+const { lang, alternate } = Astro.props;
+---
+
+<nav class="language-switcher" aria-label={ui[lang].language}>
+  <a
+    href={lang === 'ca' ? Astro.url.pathname : alternate}
+    lang="ca"
+    hreflang="ca"
+    aria-current={lang === 'ca' ? 'page' : undefined}
+    >CA<span class="sr-only"> · Català</span></a
+  >
+  <span aria-hidden="true">/</span>
+  <a
+    href={lang === 'es' ? Astro.url.pathname : alternate}
+    lang="es"
+    hreflang="es"
+    aria-current={lang === 'es' ? 'page' : undefined}
+    >ES<span class="sr-only"> · Castellano</span></a
+  >
+</nav>

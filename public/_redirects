@@ -1,0 +1,13 @@
+# Confirmed legacy routes. Cloudflare Pages applies these as HTTP 301 redirects.
+/es/servicios/direccion-ejecucion-obras/ /es/servicios/direccion-gestion-obras/ 301
+/es/servicios/direccion-ejecucion-obras /es/servicios/direccion-gestion-obras/ 301
+/ca/serveis/direccio-execucio-obres/ /ca/serveis/direccio-gestio-obres/ 301
+/ca/serveis/direccio-execucio-obres /ca/serveis/direccio-gestio-obres/ 301
+/es/servicios/gestion-proyectos/ /es/servicios/direccion-gestion-obras/ 301
+/es/servicios/gestion-proyectos /es/servicios/direccion-gestion-obras/ 301
+/ca/serveis/gestio-projectes/ /ca/serveis/direccio-gestio-obres/ 301
+/ca/serveis/gestio-projectes /ca/serveis/direccio-gestio-obres/ 301
+/es/servicios/seguridad-salud/ /es/servicios/seguridad-asesoramiento-especializado/ 301
+/es/servicios/seguridad-salud /es/servicios/seguridad-asesoramiento-especializado/ 301
+/ca/serveis/seguretat-salut/ /ca/serveis/seguretat-assessorament-especialitzat/ 301
+/ca/serveis/seguretat-salut /ca/serveis/seguretat-assessorament-especialitzat/ 301

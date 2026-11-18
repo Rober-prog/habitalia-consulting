@@ -1,0 +1,61 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import BrandLogo from './BrandLogo.astro';
+import { href, ui, type Lang, type Page } from '../i18n/ui';
+interface Props {
+  lang: Lang;
+  page: Page;
+  alternate: string;
+}
+const { lang, page, alternate } = Astro.props;
+const t = ui[lang];
+const items: Page[] = ['home', 'studio', 'services', 'contact'];
+---
+
+<a class="skip-link" href="#main">{t.skip}</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a
+      class="brand"
+      href={href(lang)}
+      aria-label={`Habitalia Consulting · ${t.nav.home}`}
+    >
+      <BrandLogo />
+    </a>
+    <nav
+      class="desktop-nav"
+      aria-label={lang === 'ca'
+        ? 'Navegació principal'
+        : 'Navegación principal'}
+    >
+      {
+        items.map((key) => (
+          <a
+            class:list={{ 'nav-contact': key === 'contact' }}
+            href={href(lang, key)}
+            aria-current={page === key ? 'page' : undefined}
+          >
+            {t.nav[key]}
+            {key === 'contact' && <span aria-hidden="true"> ↗</span>}
+          </a>
+        ))
+      }
+    </nav>
+    <LanguageSwitcher lang={lang} alternate={alternate} />
+    <details class="mobile-menu">
+      <summary>{t.menu}<span aria-hidden="true"> ＋</span></summary>
+      <nav aria-label={lang === 'ca' ? 'Navegació mòbil' : 'Navegación móvil'}>
+        {
+          items.map((key) => (
+            <a
+              href={href(lang, key)}
+              aria-current={page === key ? 'page' : undefined}
+            >
+              {t.nav[key]}
+            </a>
+          ))
+        }
+      </nav>
+    </details>
+  </div>
+</header>

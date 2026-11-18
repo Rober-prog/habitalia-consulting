@@ -1,0 +1,20 @@
+---
+import { ui, href, type Lang } from '../i18n/ui';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+---
+
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">{t.ctaEyebrow}</p><h2>{t.ctaTitle}</h2><p>
+        {t.ctaText}
+      </p>
+    </div><a class="button button-light" href={href(lang, 'contact')}
+      >{t.cta}<span aria-hidden="true">↗</span></a
+    >
+  </div>
+</section>

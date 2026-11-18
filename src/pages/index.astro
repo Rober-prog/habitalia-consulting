@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import '../styles/modern.css';
+import BrandLogo from '../components/BrandLogo.astro';
+import { href, withBase } from '../i18n/ui';
+const root = new URL(withBase(), Astro.site);
+---
+
+<!doctype html>
+<html lang="ca">
+  <head
+    ><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    /><meta name="robots" content="noindex, nofollow" /><meta
+      name="description"
+      content="Habitalia Consulting. Tria l’idioma / Elige el idioma."
+    /><title>Habitalia Consulting · Català / Castellano</title><link
+      rel="canonical"
+      href={root}
+    /><link
+      rel="alternate"
+      hreflang="ca"
+      href={new URL(href('ca'), Astro.site)}
+    /><link
+      rel="alternate"
+      hreflang="es"
+      href={new URL(href('es'), Astro.site)}
+    /><link rel="alternate" hreflang="x-default" href={root} /><link
+      rel="icon"
+      type="image/png"
+      href={withBase('/favicon.png')}
+    /></head
+  ><body class="language-page"
+    ><main class="language-gate">
+      <BrandLogo /><p class="eyebrow">Arquitectura & management</p><h1>
+        Una mirada tècnica.<br /><em lang="es">Una visión de conjunto.</em>
+      </h1><nav aria-label="Idioma">
+        <a class="button button-light" href={href('ca')} lang="ca" hreflang="ca"
+          >Català <span aria-hidden="true">↗</span></a
+        ><a
+          class="button button-light"
+          href={href('es')}
+          lang="es"
+          hreflang="es">Castellano <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </main></body
+  >
+</html>

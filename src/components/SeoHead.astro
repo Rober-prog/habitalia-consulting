@@ -1,0 +1,75 @@
+---
+import { withBase, type Lang } from '../i18n/ui';
+import { site } from '../data/site';
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  alternate: string;
+  breadcrumbs?: { name: string; path: string }[];
+}
+const { title, description, lang, alternate, breadcrumbs = [] } = Astro.props;
+const origin = Astro.site!;
+const canonical = new URL(Astro.url.pathname, origin);
+const other = lang === 'ca' ? 'es' : 'ca';
+const breadcrumbData =
+  breadcrumbs.length > 1
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.name,
+          item: new URL(item.path, origin).href,
+        })),
+      }
+    : null;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content={description} />
+<meta
+  name="robots"
+  content={site.indexable ? 'index, follow' : 'noindex, nofollow'}
+/>
+<meta name="theme-color" content="#202221" />
+<title>{title} | Habitalia Consulting</title>
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang={lang} href={canonical} />
+<link rel="alternate" hreflang={other} href={new URL(alternate, origin)} />
+<link rel="alternate" hreflang="x-default" href={new URL(withBase(), origin)} />
+<link rel="icon" type="image/png" href={withBase('/favicon.png')} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={`${title} | ${site.name}`} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={lang === 'ca' ? 'ca_ES' : 'es_ES'} />
+<meta
+  property="og:locale:alternate"
+  content={lang === 'ca' ? 'es_ES' : 'ca_ES'}
+/>
+<meta
+  property="og:image"
+  content={new URL(withBase('/assets/brand/social-card.png'), origin)}
+/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={site.name} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={`${title} | ${site.name}`} />
+<meta name="twitter:description" content={description} />
+<meta
+  name="twitter:image"
+  content={new URL(withBase('/assets/brand/social-card.png'), origin)}
+/>
+{
+  breadcrumbData && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbData).replace(/</g, '\\u003c')}
+    />
+  )
+}

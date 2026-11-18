@@ -1,0 +1,15 @@
+{
+  "purpose": "One-time geocoding of the business address explicitly supplied by the owner; no browser geocoding requests.",
+  "provider": "OpenStreetMap / Nominatim",
+  "query": "1 Carrer Amalia Soler, Vilafranca del Penedes, Spain",
+  "queryUrl": "https://nominatim.openstreetmap.org/search?street=1%20Carrer%20Amalia%20Soler&city=Vilafranca%20del%20Penedes&country=Spain&format=jsonv2&addressdetails=1&limit=5",
+  "matchedAddress": "1, Carrer Amàlia Soler, Poble Nou, Vilafranca del Penedès, Barcelona, 08720, España",
+  "osmType": "node",
+  "osmId": 13937471135,
+  "latitude": 41.3438246,
+  "longitude": 1.7016493,
+  "sourceUrl": "https://www.openstreetmap.org/node/13937471135",
+  "license": "Open Database License 1.0 (ODbL)",
+  "copyright": "https://www.openstreetmap.org/copyright",
+  "geocodingPolicy": "https://operations.osmfoundation.org/policies/nominatim/"
+}

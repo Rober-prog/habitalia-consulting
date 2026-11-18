@@ -1,0 +1,35 @@
+---
+import { href, ui, type Lang } from '../i18n/ui';
+import ArchitecturalStudy from './ArchitecturalStudy.astro';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+---
+
+<div class="hero-surface">
+  <section class="hero container">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="red-rule"></span>{t.eyebrow}</p>
+      <h1>{t.title}<br /><em>{t.titleAccent}</em></h1>
+      <p class="hero-intro">{t.intro}</p>
+      <a class="button" href={href(lang, 'studio')}
+        >{t.discover}<span aria-hidden="true">↗</span></a
+      >
+      <a class="hero-secondary" href="#services"
+        >{t.explore}<span aria-hidden="true">↓</span></a
+      >
+    </div>
+    <ArchitecturalStudy caption={t.drawing} {lang} />
+  </section>
+  <div class="hero-footnote container" aria-hidden="true">
+    <span>Habitalia Consulting</span><span
+      >{
+        lang === 'ca'
+          ? 'Perspectiva tècnica. Sensibilitat arquitectònica.'
+          : 'Perspectiva técnica. Sensibilidad arquitectónica.'
+      }</span
+    ><span>01 — 03</span>
+  </div>
+</div>

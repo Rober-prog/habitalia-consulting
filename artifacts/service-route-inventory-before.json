@@ -1,0 +1,89 @@
+{
+  "legacySourceSha256": "0927a798bc4498a0e5a04b4214e2fc93fa9d55aba7404461665a221f0e1bd05c",
+  "routes": [
+    {
+      "id": "habitability",
+      "lang": "es",
+      "path": "/es/servicios/cedulas-habitabilidad/",
+      "existed": true
+    },
+    {
+      "id": "habitability",
+      "lang": "ca",
+      "path": "/ca/serveis/cedules-habitabilitat/",
+      "existed": true
+    },
+    {
+      "id": "energy",
+      "lang": "es",
+      "path": "/es/servicios/eficiencia-energetica/",
+      "existed": true
+    },
+    {
+      "id": "energy",
+      "lang": "ca",
+      "path": "/ca/serveis/eficiencia-energetica/",
+      "existed": true
+    },
+    {
+      "id": "inspection",
+      "lang": "es",
+      "path": "/es/servicios/inspeccion-tecnica-edificios/",
+      "existed": true
+    },
+    {
+      "id": "inspection",
+      "lang": "ca",
+      "path": "/ca/serveis/inspeccio-tecnica-edificis/",
+      "existed": true
+    },
+    {
+      "id": "construction",
+      "lang": "es",
+      "path": "/es/servicios/direccion-ejecucion-obras/",
+      "existed": true
+    },
+    {
+      "id": "construction",
+      "lang": "ca",
+      "path": "/ca/serveis/direccio-execucio-obres/",
+      "existed": true
+    },
+    {
+      "id": "reports",
+      "lang": "es",
+      "path": "/es/servicios/proyectos-informes-tecnicos/",
+      "existed": true
+    },
+    {
+      "id": "reports",
+      "lang": "ca",
+      "path": "/ca/serveis/projectes-informes-tecnics/",
+      "existed": true
+    },
+    {
+      "id": "safety",
+      "lang": "es",
+      "path": "/es/servicios/seguridad-salud/",
+      "existed": true
+    },
+    {
+      "id": "safety",
+      "lang": "ca",
+      "path": "/ca/serveis/seguretat-salut/",
+      "existed": true
+    },
+    {
+      "id": "management",
+      "lang": "es",
+      "path": "/es/servicios/gestion-proyectos/",
+      "existed": true
+    },
+    {
+      "id": "management",
+      "lang": "ca",
+      "path": "/ca/serveis/gestio-projectes/",
+      "existed": true
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "id": "habitability",
+    "order": 1,
+    "status": "pending",
+    "slug": { "ca": "cedules-habitabilitat", "es": "cedulas-habitabilidad" },
+    "title": {
+      "ca": "Cèdules d’habitabilitat",
+      "es": "Cédulas de habitabilidad"
+    },
+    "summary": {
+      "ca": "Una primera mirada a la documentació i a les condicions de l’habitatge.",
+      "es": "Una primera mirada a la documentación y a las condiciones de la vivienda."
+    },
+    "audience": {
+      "ca": "Persones propietàries que volen estudiar la situació documental d’un habitatge.",
+      "es": "Personas propietarias que quieren estudiar la situación documental de una vivienda."
+    },
+    "scope": {
+      "ca": "Proposta de revisió de la informació disponible i definició de les comprovacions tècniques necessàries. L’abast s’ha de confirmar per a cada cas.",
+      "es": "Propuesta de revisión de la información disponible y definición de las comprobaciones técnicas necesarias. El alcance debe confirmarse para cada caso."
+    },
+    "documents": {
+      "ca": "Adreça de l’immoble, plànols si se’n disposa i documentació prèvia de l’habitatge. Llista orientativa, no exhaustiva.",
+      "es": "Dirección del inmueble, planos si se dispone de ellos y documentación previa de la vivienda. Lista orientativa, no exhaustiva."
+    }
+  },
+  {
+    "id": "energy",
+    "order": 2,
+    "status": "pending",
+    "slug": { "ca": "eficiencia-energetica", "es": "eficiencia-energetica" },
+    "title": { "ca": "Eficiència energètica", "es": "Eficiencia energética" },
+    "summary": {
+      "ca": "Conèixer el comportament energètic per valorar les possibilitats de millora.",
+      "es": "Conocer el comportamiento energético para valorar las posibilidades de mejora."
+    },
+    "audience": {
+      "ca": "Persones propietàries interessades a estudiar l’eficiència del seu immoble.",
+      "es": "Personas propietarias interesadas en estudiar la eficiencia de su inmueble."
+    },
+    "scope": {
+      "ca": "Proposta d’estudi de les característiques de l’edifici i de la informació de les instal·lacions, amb abast pendent d’acord.",
+      "es": "Propuesta de estudio de las características del edificio y de la información de las instalaciones, con alcance pendiente de acuerdo."
+    },
+    "documents": {
+      "ca": "Plànols disponibles, dades de les instal·lacions i documentació energètica prèvia, si existeix.",
+      "es": "Planos disponibles, datos de las instalaciones y documentación energética previa, si existe."
+    }
+  },
+  {
+    "id": "inspection",
+    "order": 3,
+    "status": "pending",
+    "slug": {
+      "ca": "inspeccio-tecnica-edificis",
+      "es": "inspeccion-tecnica-edificios"
+    },
+    "title": {
+      "ca": "Inspecció tècnica d’edificis",
+      "es": "Inspección técnica de edificios"
+    },
+    "summary": {
+      "ca": "Entendre l’estat de conservació i ordenar les qüestions que cal revisar.",
+      "es": "Entender el estado de conservación y ordenar las cuestiones que conviene revisar."
+    },
+    "audience": {
+      "ca": "Comunitats i persones propietàries que volen valorar l’estat del seu edifici.",
+      "es": "Comunidades y personas propietarias que quieren valorar el estado de su edificio."
+    },
+    "scope": {
+      "ca": "Proposta de revisió tècnica de l’edifici. Visites, documentació i eventuals tràmits s’han de definir i confirmar.",
+      "es": "Propuesta de revisión técnica del edificio. Visitas, documentación y posibles trámites deben definirse y confirmarse."
+    },
+    "documents": {
+      "ca": "Informació de l’edifici, informes previs i antecedents d’intervencions, si estan disponibles.",
+      "es": "Información del edificio, informes previos y antecedentes de intervenciones, si están disponibles."
+    }
+  },
+  {
+    "id": "construction",
+    "order": 4,
+    "status": "pending",
+    "slug": {
+      "ca": "direccio-execucio-obres",
+      "es": "direccion-ejecucion-obras"
+    },
+    "title": {
+      "ca": "Direcció d’execució d’obres",
+      "es": "Dirección de ejecución de obras"
+    },
+    "summary": {
+      "ca": "Una proposta de seguiment tècnic durant el procés de construcció.",
+      "es": "Una propuesta de seguimiento técnico durante el proceso de construcción."
+    },
+    "audience": {
+      "ca": "Promotors i equips que estan definint una actuació constructiva.",
+      "es": "Promotores y equipos que están definiendo una actuación constructiva."
+    },
+    "scope": {
+      "ca": "Funcions i responsabilitats a definir segons el projecte i el professional habilitat. Servei subjecte a confirmació expressa.",
+      "es": "Funciones y responsabilidades por definir según el proyecto y el profesional habilitado. Servicio sujeto a confirmación expresa."
+    },
+    "documents": {
+      "ca": "Projecte disponible, fase de l’obra i relació d’agents que hi intervenen.",
+      "es": "Proyecto disponible, fase de la obra y relación de agentes que intervienen."
+    }
+  },
+  {
+    "id": "reports",
+    "order": 5,
+    "status": "pending",
+    "slug": {
+      "ca": "projectes-informes-tecnics",
+      "es": "proyectos-informes-tecnicos"
+    },
+    "title": {
+      "ca": "Projectes i informes tècnics",
+      "es": "Proyectos e informes técnicos"
+    },
+    "summary": {
+      "ca": "Analitzar una necessitat i donar forma a la documentació tècnica adequada.",
+      "es": "Analizar una necesidad y dar forma a la documentación técnica adecuada."
+    },
+    "audience": {
+      "ca": "Persones i organitzacions amb una consulta tècnica sobre un immoble.",
+      "es": "Personas y organizaciones con una consulta técnica sobre un inmueble."
+    },
+    "scope": {
+      "ca": "Proposta de definició de l’objecte de l’informe o projecte i de la informació necessària per estudiar-lo.",
+      "es": "Propuesta de definición del objeto del informe o proyecto y de la información necesaria para estudiarlo."
+    },
+    "documents": {
+      "ca": "Descripció de la consulta, documentació existent i fotografies pròpies si són pertinents.",
+      "es": "Descripción de la consulta, documentación existente y fotografías propias si son pertinentes."
+    }
+  },
+  {
+    "id": "safety",
+    "order": 6,
+    "status": "pending",
+    "slug": { "ca": "seguretat-salut", "es": "seguridad-salud" },
+    "title": { "ca": "Seguretat i salut", "es": "Seguridad y salud" },
+    "summary": {
+      "ca": "Considerar la coordinació preventiva des de la definició de l’actuació.",
+      "es": "Considerar la coordinación preventiva desde la definición de la actuación."
+    },
+    "audience": {
+      "ca": "Promotors i equips que preparen o desenvolupen una obra.",
+      "es": "Promotores y equipos que preparan o desarrollan una obra."
+    },
+    "scope": {
+      "ca": "Coordinació de seguretat i salut com a àmbit candidat. Les funcions i la disponibilitat requereixen validació professional.",
+      "es": "Coordinación de seguridad y salud como ámbito candidato. Las funciones y la disponibilidad requieren validación profesional."
+    },
+    "documents": {
+      "ca": "Informació del projecte, fase prevista i agents participants, si es coneixen.",
+      "es": "Información del proyecto, fase prevista y agentes participantes, si se conocen."
+    }
+  },
+  {
+    "id": "management",
+    "order": 7,
+    "status": "pending",
+    "slug": { "ca": "gestio-projectes", "es": "gestion-proyectos" },
+    "title": { "ca": "Gestió de projectes", "es": "Gestión de proyectos" },
+    "summary": {
+      "ca": "Una visió de conjunt per ordenar decisions, agents i etapes.",
+      "es": "Una visión de conjunto para ordenar decisiones, agentes y etapas."
+    },
+    "audience": {
+      "ca": "Persones promotores que volen definir les necessitats de coordinació d’un projecte.",
+      "es": "Personas promotoras que quieren definir las necesidades de coordinación de un proyecto."
+    },
+    "scope": {
+      "ca": "Proposta d’organització de l’actuació i dels seus interlocutors. Les funcions, els lliurables i el seguiment es definiran abans d’un encàrrec.",
+      "es": "Propuesta de organización de la actuación y de sus interlocutores. Las funciones, los entregables y el seguimiento se definirán antes de un encargo."
+    },
+    "documents": {
+      "ca": "Objectius, fase del projecte, agents implicats i documentació disponible.",
+      "es": "Objetivos, fase del proyecto, agentes implicados y documentación disponible."
+    }
+  }
+]

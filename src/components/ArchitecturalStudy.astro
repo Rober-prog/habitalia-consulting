@@ -1,0 +1,92 @@
+---
+interface Props {
+  caption: string;
+  lang: 'ca' | 'es';
+}
+const { caption, lang } = Astro.props;
+---
+
+<figure class="architectural-study">
+  <div class="pavilion-canvas" aria-hidden="true">
+    <div class="pavilion-heading">
+      <span>H / 01</span><span
+        >{lang === 'ca' ? 'Estudi espacial' : 'Estudio espacial'}</span
+      >
+    </div>
+    <svg
+      class="pavilion"
+      viewBox="0 0 640 610"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <!-- Original conceptual drawing; not a client project or brand symbol. -->
+      <g stroke="#4c504d" stroke-width=".65"
+        ><path
+          d="M40 425 365 237 620 385M40 460 365 272 620 420M40 495 365 307 620 455M40 530 365 342 620 490M40 565 365 377 620 525"
+        ></path><path
+          d="M60 389 360 562M120 354 420 527M180 319 480 492M240 284 540 457M300 249 600 422"
+        ></path></g
+      >
+      <path d="m80 441 301-174 260 150-301 174z" fill="#111614"></path>
+      <path
+        d="m91 421 272-157 232 134-272 157z"
+        fill="#777a72"
+        stroke="#d4d6cb"
+        stroke-width="1.2"></path>
+      <path d="m91 421 232 134v12L91 433z" fill="#4b514a" stroke="#7e8478"
+      ></path><path
+        d="m323 555 272-157v12L323 567z"
+        fill="#292f2a"
+        stroke="#7e8478"></path>
+      <path d="m157 253 157-91 193 112-157 91z" fill="#8a8f83" stroke="#e1e3d8"
+      ></path>
+      <path d="m157 253 193 112v145L157 398z" fill="#b0b3a6" stroke="#e1e3d8"
+      ></path><path
+        d="m350 365 157-91v145l-157 91z"
+        fill="#343d36"
+        stroke="#aeb5a6"></path>
+      <path d="m190 294 126 73v100l-126-73z" fill="#1e2924" stroke="#d4d7ca"
+      ></path><path d="m195 300 116 67v89l-116-67z" fill="#33433b"></path>
+      <g stroke="#8f9c8d" stroke-width="1"
+        ><path d="M220 315v90M251 333v90M282 351v90"></path><path
+          d="m195 347 116 67"></path></g
+      >
+      <path d="m383 365 88-51v103l-88 51z" fill="#18231d" stroke="#99a48f"
+      ></path><path d="m383 389 88-51M412 348v103M442 331v103" stroke="#71826b"
+      ></path>
+      <path
+        d="m126 233 186-108 231 134-187 108z"
+        fill="#d9d9ca"
+        stroke="#f0f0e7"></path><path
+        d="m126 233 230 134v16L126 249z"
+        fill="#90978a"
+        stroke="#d5d9ca"></path><path
+        d="m356 367 187-108v16L356 383z"
+        fill="#586452"
+        stroke="#c2cbb8"></path>
+      <path d="m154 230 158-92 204 119-159 92z" stroke="#9b9e8e"></path><path
+        d="M147 261v146M337 372v147M492 291v143"
+        stroke="#e4e7d6"
+        stroke-width="3"></path>
+      <g stroke="#8b9685" stroke-width=".8" stroke-dasharray="3 6"
+        ><path
+          d="M312 93v-37M112 230 66 204M556 266l43 25M94 455l-28 16M609 414l18 10"
+        ></path><path d="m62 190 271-156 280 162M62 190v291M613 196v240"
+        ></path></g
+      >
+      <path d="m81 475 246 142M88 466l-14 18M334 607l-14 18" stroke="#9aab94"
+      ></path><path d="m534 462 66-38" stroke="#ef5360" stroke-width="1.5"
+      ></path><circle cx="534" cy="462" r="3" fill="#ef5360"></circle>
+    </svg>
+    <div class="pavilion-bottom">
+      <span
+        >{
+          lang === 'ca'
+            ? 'Forma · Espai · Equilibri'
+            : 'Forma · Espacio · Equilibrio'
+        }</span
+      ><span class="pavilion-cross">＋</span>
+    </div>
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>

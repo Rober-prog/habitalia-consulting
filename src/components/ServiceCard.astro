@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { ui, href, type Lang } from '../i18n/ui';
+interface Props {
+  service: CollectionEntry<'services'>;
+  lang: Lang;
+}
+const { service, lang } = Astro.props;
+const { data } = service;
+const t = ui[lang];
+---
+
+<article class="service-card">
+  <div class="card-top">
+    <span class="card-number">{String(data.order).padStart(2, '0')}</span><span
+      class="card-arrow"
+      aria-hidden="true">↗</span
+    >
+  </div>
+  <div class="service-sketch" aria-hidden="true">
+    <svg viewBox="0 0 200 115" fill="none"
+      ><path d="m28 66 70-40 70 40-70 40z"></path><path
+        d="m28 41 70-40 70 40-70 40zM28 41v25M98 81v25M168 41v25M63 21v45l70-40v45"
+      ></path><path class="sketch-accent" d="m98 81 70-40"></path></svg
+    >
+  </div>
+  <h3>
+    <a href={`${href(lang, 'services')}${data.slug[lang]}/`}
+      >{data.title[lang]}</a
+    >
+  </h3>
+  <p>{data.summary[lang]}</p>
+  <small>{t.pendingService}</small>
+</article>

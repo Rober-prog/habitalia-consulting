@@ -1,0 +1,251 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import portrait from '../../../assets/portrait/salvador-retrato-profesional.png';
+import { site } from '../../data/site';
+import {
+  href,
+  languages,
+  slugs,
+  ui,
+  type Lang,
+  type Page,
+} from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+import CategoryPage from '../../components/CategoryPage.astro';
+import CTA from '../../components/CTA.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import StudioContent from '../../components/StudioContent.astro';
+import ContactDetails from '../../components/ContactDetails.astro';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+  return languages.flatMap((lang) => [
+    ...(Object.keys(slugs[lang]) as Page[]).map((page) => ({
+      params: { lang, path: slugs[lang][page] || undefined },
+      props: { lang, page },
+    })),
+    ...categories.map((category) => ({
+      params: {
+        lang,
+        path: `${slugs[lang].services}/${category.data.slug[lang]}`,
+      },
+      props: { lang, page: 'services' as Page, category },
+    })),
+  ]);
+}
+interface Props {
+  lang: Lang;
+  page: Page;
+  category?: CollectionEntry<'categories'>;
+}
+const { lang, page, category } = Astro.props;
+const t = ui[lang];
+const other: Lang = lang === 'ca' ? 'es' : 'ca';
+const alternate = category
+  ? `${href(other, 'services')}${category.data.slug[other]}/`
+  : href(other, page);
+const categories = (await getCollection('categories')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const titles: Record<Page, string> = {
+  home: `${t.title} ${t.titleAccent}`,
+  studio: t.studioTitle,
+  services: t.servicesTitle,
+  contact: t.contactTitle,
+  legal: t.legalTitle,
+  privacy: t.privacyTitle,
+  cookies: t.cookiesTitle,
+};
+const descriptions: Record<Page, string> = {
+  home: t.intro,
+  studio: t.studioText,
+  services: t.servicesIntro,
+  contact: t.contactIntro,
+  legal: t.legalText,
+  privacy: t.privacyText,
+  cookies: t.cookiesText,
+};
+const title = category ? category.data.title[lang] : titles[page];
+const description = category
+  ? category.data.metaDescription[lang]
+  : descriptions[page];
+const breadcrumbs = [
+  { name: t.nav.home, path: href(lang) },
+  ...(page !== 'home' ? [{ name: t.nav[page], path: href(lang, page) }] : []),
+  ...(category
+    ? [
+        {
+          name: title,
+          path: `${href(lang, 'services')}${category.data.slug[lang]}/`,
+        },
+      ]
+    : []),
+];
+---
+
+<BaseLayout {lang} {page} {title} {description} {alternate} {breadcrumbs}>
+  {
+    page === 'home' && (
+      <>
+        <Hero {lang} />
+        <section class="approach section container">
+          <>
+            <p class="eyebrow">{t.approach}</p>
+            <div>
+              <>
+                <h2>{t.approachTitle}</h2>
+                <p class="large-copy">{t.approachText}</p>
+              </>
+            </div>
+          </>
+        </section>
+        <section id="services" class="services-section section">
+          <div class="container">
+            <>
+              <div class="section-heading">
+                <>
+                  <div>
+                    <>
+                      <p class="eyebrow">{t.servicesLabel}</p>
+                      <h2>{t.servicesTitle}</h2>
+                    </>
+                  </div>
+                  <a class="text-link" href={href(lang, 'services')}>
+                    {t.allServices} <span aria-hidden="true">↗</span>
+                  </a>
+                </>
+              </div>
+              <p class="section-intro">{t.servicesIntro}</p>
+              <div class="category-grid">
+                {categories.map((item) => (
+                  <CategoryCard {lang} category={item} />
+                ))}
+              </div>
+              <p class="category-art-note">{t.conceptArt}</p>
+            </>
+          </div>
+        </section>
+        <section class="section container process-section">
+          <>
+            <p class="eyebrow">{t.processLabel}</p>
+            <h2>{t.processTitle}</h2>
+            <ol class="process-list">
+              {t.steps.map(([name, text], i) => (
+                <li>
+                  <span class="step-number">0{i + 1}</span>
+                  <h3>{name}</h3>
+                  <p>{text}</p>
+                </li>
+              ))}
+            </ol>
+          </>
+        </section>
+        <CTA {lang} />
+      </>
+    )
+  }
+  {
+    page === 'studio' && (
+      <>
+        <section class="container page-heading studio-heading">
+          <>
+            <p class="eyebrow">{t.nav.studio}</p>
+            <h1>
+              {site.person.name[lang]}{' '}
+              <span class="studio-title-role">{site.person.role[lang]}</span>
+            </h1>
+          </>
+        </section>
+        <>
+          <section class="container studio-grid studio-editorial section-bottom">
+            <>
+              <figure class="portrait">
+                <>
+                  <Image
+                    src={portrait}
+                    alt={
+                      lang === 'ca'
+                        ? 'Retrat editat de Salvador Oliver i Juvé facilitat per al projecte'
+                        : 'Retrato editado de Salvador Oliver i Juvé facilitado para el proyecto'
+                    }
+                    widths={[480, 720, 1000]}
+                    sizes="(max-width: 760px) 100vw, 45vw"
+                    width={1000}
+                    height={1200}
+                    fit="cover"
+                    position="center"
+                    format="webp"
+                    loading="eager"
+                  />
+                </>
+              </figure>
+              <StudioContent {lang} />
+            </>
+          </section>
+          <CTA {lang} />
+        </>
+      </>
+    )
+  }
+  {
+    page === 'services' && !category && (
+      <>
+        <section class="container page-heading">
+          <>
+            <p class="eyebrow">{t.nav.services}</p>
+            <h1>{t.servicesTitle}</h1>
+            <p class="large-copy">{t.servicesIntro}</p>
+          </>
+        </section>
+        <>
+          <section class="container section-bottom" aria-label={t.nav.services}>
+            <div class="category-grid">
+              {categories.map((item) => (
+                <CategoryCard {lang} category={item} heading="h2" />
+              ))}
+            </div>
+            <p class="category-art-note">{t.conceptArt}</p>
+          </section>
+          <CTA {lang} />
+        </>
+      </>
+    )
+  }
+  {category && <CategoryPage {category} {categories} {lang} />}
+  {
+    page === 'contact' && (
+      <>
+        <section class="container page-heading">
+          <>
+            <p class="eyebrow">{t.nav.contact}</p>
+            <h1>{t.contactTitle}</h1>
+            <p class="large-copy">{t.contactIntro}</p>
+          </>
+        </section>
+        <div class="container contact-grid section-bottom">
+          <>
+            <ContactDetails {lang} />
+            <ContactForm {lang} />
+          </>
+        </div>
+      </>
+    )
+  }
+  {
+    (['legal', 'privacy', 'cookies'] as Page[]).includes(page) && (
+      <section class="container page-heading legal-page">
+        <>
+          <p class="eyebrow">Habitalia Consulting</p>
+          <h1>{title}</h1>
+          <p class="large-copy">{description}</p>
+          <a class="text-link" href={href(lang, 'contact')}>
+            {t.nav.contact} ↗
+          </a>
+        </>
+      </section>
+    )
+  }
+</BaseLayout>
