@@ -264,14 +264,18 @@ test('essential navigation works without JavaScript; no contact data can be sent
   await context.close();
 });
 
-test('selector, not-found page and no external requests', async ({ page }) => {
+test('Catalan default, Spanish switch, not-found page and no external requests', async ({
+  page,
+}) => {
   const external: string[] = [];
   page.on('request', (request) => {
     if (!request.url().startsWith('http://127.0.0.1:4321/'))
       external.push(request.url());
   });
   await page.goto('/');
-  await page.getByRole('link', { name: 'Castellano' }).click();
+  await expect(page).toHaveURL(/\/ca\/$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ca');
+  await page.locator('.language-switcher a[lang="es"]').click();
   await expect(page).toHaveURL(/\/es\//);
   await page.goto('/404.html');
   await expect(page.locator('h1')).toContainText('Página no encontrada');

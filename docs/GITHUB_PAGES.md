@@ -7,6 +7,12 @@ El titular autoriza expresamente subir el proyecto y crear esta vista el
 18/11/2026. No se modifica el dominio corporativo ni DNS. La vista conserva
 noindex y el formulario se sustituye por contacto mediante correo y teléfono.
 
+El titular fija el catalán como idioma predeterminado el 19/11/2026. La raíz
+redirige directamente a `/ca/`, también sin JavaScript y sin depender del
+idioma del navegador. El selector mantiene el acceso explícito a castellano.
+Canonical de la raíz y hreflang x-default apuntan a la portada catalana.
+Comprobados build, formato, enlaces y navegación con/sin JavaScript.
+
 ## Resultado comprobado
 
 Primer despliegue completado con éxito mediante el workflow

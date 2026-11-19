@@ -1,5 +1,5 @@
 ---
-import { withBase, type Lang } from '../i18n/ui';
+import { href, withBase, type Lang } from '../i18n/ui';
 import { site } from '../data/site';
 interface Props {
   title: string;
@@ -39,7 +39,7 @@ const breadcrumbData =
 <link rel="canonical" href={canonical} />
 <link rel="alternate" hreflang={lang} href={canonical} />
 <link rel="alternate" hreflang={other} href={new URL(alternate, origin)} />
-<link rel="alternate" hreflang="x-default" href={new URL(withBase(), origin)} />
+<link rel="alternate" hreflang="x-default" href={new URL(href('ca'), origin)} />
 <link rel="icon" type="image/png" href={withBase('/favicon.png')} />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={site.name} />

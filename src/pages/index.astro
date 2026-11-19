@@ -3,7 +3,7 @@ import '../styles/global.css';
 import '../styles/modern.css';
 import BrandLogo from '../components/BrandLogo.astro';
 import { href, withBase } from '../i18n/ui';
-const root = new URL(withBase(), Astro.site);
+const defaultHome = new URL(href('ca'), Astro.site);
 ---
 
 <!doctype html>
@@ -12,12 +12,15 @@ const root = new URL(withBase(), Astro.site);
     ><meta charset="utf-8" /><meta
       name="viewport"
       content="width=device-width, initial-scale=1"
-    /><meta name="robots" content="noindex, nofollow" /><meta
+    /><meta http-equiv="refresh" content={`0;url=${href('ca')}`} /><meta
+      name="robots"
+      content="noindex, nofollow"
+    /><meta
       name="description"
       content="Habitalia Consulting. Tria l’idioma / Elige el idioma."
     /><title>Habitalia Consulting · Català / Castellano</title><link
       rel="canonical"
-      href={root}
+      href={defaultHome}
     /><link
       rel="alternate"
       hreflang="ca"
@@ -26,7 +29,7 @@ const root = new URL(withBase(), Astro.site);
       rel="alternate"
       hreflang="es"
       href={new URL(href('es'), Astro.site)}
-    /><link rel="alternate" hreflang="x-default" href={root} /><link
+    /><link rel="alternate" hreflang="x-default" href={defaultHome} /><link
       rel="icon"
       type="image/png"
       href={withBase('/favicon.png')}
